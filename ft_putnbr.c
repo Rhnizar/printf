@@ -24,4 +24,3 @@ int	ft_putnbr(long int n)
 		count += ft_putchar(n + '0');
 	return (count);
 }
-
