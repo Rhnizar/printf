@@ -26,7 +26,7 @@ static int	ft_format(va_list argp, char format)
 		count += ft_hexadecimal(va_arg(argp, int), "0123456789ABCDEF");
 	if (format == 'p')
 		count += ft_putstr("0x")
-			+ ft_adresse(va_arg(argp, long long unsigned), "0123456789abcdef");
+			+ ft_adresse(va_arg(argp, long unsigned), "0123456789abcdef");
 	return (count);
 }
 
