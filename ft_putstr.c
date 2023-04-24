@@ -22,7 +22,7 @@ int	ft_putstr(char *str, int cheack)
 			count += ft_putchar('x');
 			if (str[i] < 16)
 				count += ft_putchar('0');
-			count += ft_hexadecimal((unsigned int)str[i], "0123456789abcdef");
+			count += ft_hexadecimal((unsigned int)str[i], "0123456789ABCDEF");
 		}
 		else
 			count += ft_putchar(str[i]);
