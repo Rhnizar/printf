@@ -56,6 +56,8 @@ int	_printf(const char *format, ...)
 	i = 0;
 	count = 0;
 	va_start(argp, format);
+	if (!format)
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
