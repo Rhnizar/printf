@@ -3,12 +3,12 @@
 /**
 * ft_binary - bunary
 * @n : number
-* return: count
+* Return: count
 */
 
 int ft_binary(unsigned int n)
 {
-    int	count;
+	int	count;
 
 	count = 0;
 	if (n > 1)
@@ -20,3 +20,4 @@ int ft_binary(unsigned int n)
 		count += ft_putchar(n + '0');
 	return (count);
 }
+

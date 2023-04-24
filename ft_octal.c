@@ -8,7 +8,7 @@
 
 int ft_octal(unsigned int n)
 {
-    int	count;
+	int	count;
 
 	count = 0;
 	if (n > 7)
@@ -20,3 +20,4 @@ int ft_octal(unsigned int n)
 		count += ft_putchar(n + '0');
 	return (count);
 }
+
