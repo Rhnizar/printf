@@ -15,7 +15,7 @@ static int	ft_format(va_list argp, char format)
 	if (format == 'c')
 		count += ft_putchar(va_arg(argp, int));
 	else if (format == 's')
-		count += ft_putstr(va_arg(argp, char *));
+		count += ft_putstr(va_arg(argp, char *), 0);
 	else if (format == 'd' || format == 'i')
 		count += ft_putnbr(va_arg(argp, int));
 	else if (format == 'o')
@@ -28,8 +28,10 @@ static int	ft_format(va_list argp, char format)
 		count += ft_hexadecimal(va_arg(argp, int), "0123456789abcdef");
 	else if (format == 'X')
 		count += ft_hexadecimal(va_arg(argp, int), "0123456789ABCDEF");
+	else if (format == 'S')
+		count += ft_putstr(va_arg(argp, char *), 1);
 	else if (format == 'p')
-		count += ft_putstr("0x")
+		count += ft_putstr("0x", 0)
 			+ ft_adresse(va_arg(argp, long int), "0123456789abcdef");
 	else if (format == '%')
 		count += ft_putchar('%');
@@ -58,8 +60,6 @@ int	_printf(const char *format, ...)
 	va_start(argp, format);
 	if (!format)
 		return (-1);
-	if (format[i] == '\0')
-		return (0);
 	while (format[i])
 	{
 		if (format[i] == '%')
