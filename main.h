@@ -7,7 +7,6 @@
 #include <stdio.h>
 
 
-
 int _printf(const char *format, ...);
 
 int	ft_putchar(char c);
