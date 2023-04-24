@@ -19,7 +19,7 @@ static int	ft_format(va_list argp, char format)
 	else if (format == 'd' || format == 'i')
 		count += ft_putnbr(va_arg(argp, int));
 	else if (format == 'o')
-		count += ft_octal(va_arg(argp, int));
+		count += ft_octal(va_arg(argp, unsigned int));
 	
 	else if (format == 'u')
 		count += ft_unsignedint(va_arg(argp, int));
