@@ -20,7 +20,8 @@ static int	ft_format(va_list argp, char format)
 		count += ft_putnbr(va_arg(argp, int));
 	else if (format == 'o')
 		count += ft_octal(va_arg(argp, unsigned int));
-	
+	else if (format == 'b')
+		count += ft_binary(va_arg(argp, unsigned int));
 	else if (format == 'u')
 		count += ft_unsignedint(va_arg(argp, int));
 	else if (format == 'x')
@@ -60,7 +61,6 @@ int	_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			
 			count += ft_format(argp, format[i]);
 		}
 		else
