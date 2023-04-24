@@ -4,7 +4,7 @@
  * ft_format - function format
  * @argp : list arguments
  * @format : format
- * Retunr: count
+ * Return: count
  */
 
 static int	ft_format(va_list argp, char format)
@@ -26,14 +26,14 @@ static int	ft_format(va_list argp, char format)
 		count += ft_hexadecimal(va_arg(argp, int), "0123456789ABCDEF");
 	if (format == 'p')
 		count += ft_putstr("0x")
-			+ ft_adresse(va_arg(argp, long unsigned), "0123456789abcdef");
+			+ ft_adresse(va_arg(argp, long int), "0123456789abcdef");
 	return (count);
 }
 
 /**
  * _printf - printf
  * @format : last argument in varidic function
- * Return : count
+ * Return: count
  */
 
 int	_printf(const char *format, ...)
@@ -61,3 +61,4 @@ int	_printf(const char *format, ...)
 	va_end(argp);
 	return (count);
 }
+
