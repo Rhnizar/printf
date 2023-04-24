@@ -15,5 +15,6 @@ int	ft_putstr(char *str);
 int	ft_unsignedint(unsigned int n);
 int	ft_hexadecimal(unsigned int n, char *base);
 int	ft_adresse(long int n, char *base);
+int ft_octal(unsigned int n);
 
 #endif

@@ -14,19 +14,29 @@ static int	ft_format(va_list argp, char format)
 	count = 0;
 	if (format == 'c')
 		count += ft_putchar(va_arg(argp, int));
-	if (format == 's')
+	else if (format == 's')
 		count += ft_putstr(va_arg(argp, char *));
-	if (format == 'd' || format == 'i')
+	else if (format == 'd' || format == 'i')
 		count += ft_putnbr(va_arg(argp, int));
-	if (format == 'u')
+	else if (format == 'o')
+		count += ft_octal(va_arg(argp, int));
+	
+	else if (format == 'u')
 		count += ft_unsignedint(va_arg(argp, int));
-	if (format == 'x')
+	else if (format == 'x')
 		count += ft_hexadecimal(va_arg(argp, int), "0123456789abcdef");
-	if (format == 'X')
+	else if (format == 'X')
 		count += ft_hexadecimal(va_arg(argp, int), "0123456789ABCDEF");
-	if (format == 'p')
+	else if (format == 'p')
 		count += ft_putstr("0x")
 			+ ft_adresse(va_arg(argp, long int), "0123456789abcdef");
+	else if (format == '%')
+		count += ft_putchar('%');
+	else
+	{
+		count += ft_putchar('%');
+		count += ft_putchar(format);
+	}
 	return (count);
 }
 
@@ -50,8 +60,7 @@ int	_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '%')
-				count += ft_putchar('%');
+			
 			count += ft_format(argp, format[i]);
 		}
 		else
