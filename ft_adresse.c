@@ -7,7 +7,7 @@
  * Return: count
  */
 
-int	ft_adresse(long int n, char *base)
+int	ft_adresse(unsigned long int n, char *base)
 {
 	int	count;
 

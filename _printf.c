@@ -9,10 +9,10 @@
 int	adresse(va_list argp)
 {
 	int count;
+	unsigned long int adr;
 
 	count = 0;
-	long int adr;
-	adr = va_arg(argp, long int);
+	adr = va_arg(argp, unsigned long int);
 	if (adr)
 	{
 		count += ft_putstr("0x", 0) + ft_adresse(adr, "0123456789abcdef");
