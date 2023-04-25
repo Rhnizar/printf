@@ -81,6 +81,10 @@ int	_printf(const char *format, ...)
 	va_start(argp, format);
 	if (!format)
 		return (-1);
+	if (!format || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && format[2] == '\0')
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
