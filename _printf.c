@@ -1,6 +1,28 @@
 #include "main.h"
 
 /**
+* adresse - adr
+* @argp : list arg
+* Return: count
+*/
+
+int	adresse(va_list argp)
+{
+	int count;
+
+	count = 0;
+	long int adr;
+	adr = va_arg(argp, long int);
+	if (adr)
+	{
+		count += ft_putstr("0x", 0) + ft_adresse(adr, "0123456789abcdef");
+	}
+	else
+		count += ft_putstr("(nil)", 0);
+	return (count);
+}
+
+/**
  * ft_format - function format
  * @argp : list arguments
  * @format : format
@@ -31,8 +53,7 @@ static int	ft_format(va_list argp, char format)
 	else if (format == 'S')
 		count += ft_putstr(va_arg(argp, char *), 1);
 	else if (format == 'p')
-		count += ft_putstr("0x", 0)
-			+ ft_adresse(va_arg(argp, long int), "0123456789abcdef");
+		count += adresse(argp);
 	else if (format == '%')
 		count += ft_putchar('%');
 	else
