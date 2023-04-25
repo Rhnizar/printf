@@ -17,5 +17,7 @@ int	ft_hexadecimal(unsigned int n, char *base);
 int	ft_adresse(unsigned long int n, char *base);
 int ft_octal(unsigned int n);
 int ft_binary(unsigned int n);
+int rot13(char *str);
+int rev_str(char *str);
 
 #endif

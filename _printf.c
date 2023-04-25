@@ -56,6 +56,10 @@ static int	ft_format(va_list argp, char format)
 		count += adresse(argp);
 	else if (format == '%')
 		count += ft_putchar('%');
+	else if (c == 'r')
+		count += rev_str(va_arg(argp, char *));
+	else if (c == 'R')
+		count += rot13(va_arg(argp, char *));
 	else
 	{
 		count += ft_putchar('%');
