@@ -73,10 +73,10 @@ int rot13(char *str)
 		if (str[i] >= 'a' && str[i] <= 'z')
 			count += ft_putchar((((str[i] - 'a') + 13) % 26) + 'a');
 		else if (str[i] >= 'A' && str[i] <= 'Z')
-			counter += ft_putchar((((str[i] - 'A') + 13) % 26) + 'A');
+			count += ft_putchar((((str[i] - 'A') + 13) % 26) + 'A');
 		else
-			counter += ft_putchar(str[i]);
+			count += ft_putchar(str[i]);
 		i++;
 	}
-	return (counter);
+	return (count);
 }
